@@ -25,18 +25,39 @@ public class StringUtilsTest {
 	public static Collection<Object[]> data() {
 		return Arrays.asList(new Object[][] {
 			{"hello", "world", "helloworld"},
-			{"hellow", "orld", "helloworld"},
-			{"hello", "world", "hello"},
-			{"a", "b", "c"},
-			{1, 2, 3},
-			{"c", "c", "cc"}
+			{"hello", "world", "olleh"},
+			{"hello", "world", "HELLO"},
+			{"hello   ", "world", "hello"}
 		});
 	}
 	
 	@Test
+
 	public void testConcat() {
-		String actualResult = StringUtils.concat(string1,string2);
+		String actualResult = StringUtils.concat(string1, string2);
 		assertEquals(expectedResult, actualResult);
+	}
+
+	@Test
+	
+	public void testReverse() {
+		String actualResult = StringUtils.reverse(string1);
+		assertEquals(expectedResult, actualResult);
+	}
+
+	@Test
+
+	public void testToUpper() {
+		String actualResult = StringUtils.toUpperCase(string1);
+		assertEquals(expectedResult, actualResult);
+	}
+
+	@Test
+
+	public void testTrim() {
+		String actualResult = StringUtils.trim(string1);
+		assertEquals(expectedResult, actualResult);
+
 	}
 
 }
